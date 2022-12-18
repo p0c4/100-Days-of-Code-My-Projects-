@@ -36,10 +36,10 @@ headers = {
 add_pixel_endpoint = f"{pixela_endpoint}/{user_params['username']}/graphs/{graph_config['id']}"
 add_pixel_params = {
     "date": datetime.now().strftime('%Y%m%d'),
-    "quantity": "25",
+    "quantity": input("How many minutes did you study speaking today? "),
 }
-# response = requests.post(url=add_pixel_endpoint, json=add_pixel_params, headers=headers)
-# print(response.text)
+response = requests.post(url=add_pixel_endpoint, json=add_pixel_params, headers=headers)
+print(response.text)
 
 
 """Fourth Step - If we want to change any posted input"""  # This option is paid
@@ -55,5 +55,5 @@ new_pixel_params = {
 """"Lastly - If we want to delete any posted input"""
 delete_endpoint = f"{pixela_endpoint}/{user_params['username']}/graphs/{graph_config['id']}/{add_pixel_params['date']}"
 
-response = requests.delete(url=update_endpoint, headers=headers)
-print(response.text)
+# response = requests.delete(url=update_endpoint, headers=headers)
+# print(response.text)
