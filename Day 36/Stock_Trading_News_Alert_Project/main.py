@@ -42,7 +42,7 @@ diff_yesterday_percent = round(diff / close_yesterday * 100)
 client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
 if abs(diff_yesterday_percent) > 5:
-    message = client.messages.create(body="Get News", from_=os.environ.get("TWILIO_PHONE"),
+    message = client.messages.create(body="Get News!", from_=os.environ.get("TWILIO_PHONE"),
                                      to=os.environ.get("MY_PHONE"))
     print(message.status)
 else:
@@ -53,6 +53,3 @@ else:
         body=f"{STOCK}: {up_down}{diff}%\nHeadline: {new['title']} \nBrief: {new['description']}", 
         from_=os.environ.get("TWILIO_PHONE"), 
         to=os.environ.get("MY_PHONE"))) for new in news]
-
-
-
