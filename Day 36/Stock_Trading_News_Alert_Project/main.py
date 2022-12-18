@@ -16,7 +16,7 @@ parameters_stock = {
     "symbol": STOCK,
     "apikey": os.environ.get("STOCK_KEY")
 }
-parameters_news= {
+parameters_news = {
     "q": "tesla",
     "language": "en",
     "apiKey": os.environ.get("NEWS_API")
