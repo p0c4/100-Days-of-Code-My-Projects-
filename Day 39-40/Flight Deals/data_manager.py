@@ -1,5 +1,7 @@
+import os
 import requests
 
+SHEETY_ENDPOINT = os.environ.get("ENV_SHEETY_FLIGHT_ENDPOINT")
 
 
 class DataManager:
@@ -8,7 +10,7 @@ class DataManager:
         self.destination_data = {}
 
     def sheety_data(self):
-        response = requests.get(url="https://api.sheety.co/4be9234d65140ce0fbd2b369b8b4f933/flightDeals/prices")
+        response = requests.get(url=SHEETY_ENDPOINT)
         response.raise_for_status()
         d_data = response.json()
         self.destination_data = d_data["prices"]
@@ -22,5 +24,5 @@ class DataManager:
                 }
             }
             requests.put(
-                url=f"https://api.sheety.co/4be9234d65140ce0fbd2b369b8b4f933/flightDeals/prices/{i['id']}",
+                url=f"{SHEETY_ENDPOINT}/{i['id']}",
                 json=parameters)
