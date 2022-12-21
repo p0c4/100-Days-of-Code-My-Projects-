@@ -1,4 +1,3 @@
-import requests
 import os
 from twilio.rest import Client
 
@@ -10,8 +9,7 @@ class NotificationManager:
     def __init__(self):
         self.client = Client(ACCOUNT_SID, AUTH_TOKEN)
 
-    def send_message(self, price, departure_from, arrival_destination, date_from, date_to):
+    def send_message(self, message):
         message = self.client.messages.create(
-            body=f"Low price alert! Only £{price} to fly from {departure_from} to {arrival_destination}, "
-                 f"from {date_from} to {date_to}.",
+            body=message,
             from_=os.environ.get("TWILIO_PHONE"), to=os.environ.get("MY_PHONE"))
