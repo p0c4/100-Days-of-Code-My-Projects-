@@ -21,10 +21,14 @@ if sheet_data[0]["iataCode"] == "":
 
 for destination in sheet_data:
     flight = flight_search.search_flight(destination["iataCode"], ORIGIN_CITY_IATA)
-
+    if flight is None:
+        continue
     if flight.price < destination["lowestPrice"]:
-        notification_manager.send_message(
-            message=f"Low price alert! Only £{flight.price} to fly from {flight.origin_city}-{flight.origin_airport} to "
-                    f"{flight.destination_city}-{flight.destination_airport}, "
-                    f"from {flight.out_date} to {flight.return_date}."
-        )
+        message = f"Low price alert! Only £{flight.price} to fly from {flight.origin_city}-{flight.origin_airport} " \
+                f"to {flight.destination_city}-{flight.destination_airport}, " \
+                f"from {flight.out_date} to {flight.return_date}."
+        if flight.stop_overs > 0:
+            message += f"\nFlight has {flight.stop_overs} stop over, via {flight.via_city}."
+            print(message)
+
+        notification_manager.send_message(message)

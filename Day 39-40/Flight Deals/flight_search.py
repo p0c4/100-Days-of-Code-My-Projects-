@@ -40,16 +40,33 @@ class FlightSearch:
         try:
             data = response.json()["data"][0]
         except IndexError:
-            print(f"No flights found for {code}.")
-            return None
-        flight_data = FlightData(
-            price=data["price"],
-            origin_city=data["route"][0]["cityFrom"],
-            origin_airport=data["route"][0]["flyFrom"],
-            destination_city=data["route"][0]["cityTo"],
-            destination_airport=data["route"][0]["flyTo"],
-            out_date=datetime.fromtimestamp(data["route"][0]["dTime"]),
-            return_date=datetime.fromtimestamp(data["route"][1]["dTime"])
-        )
-        print(f"{flight_data.destination_city}: £{flight_data.price}")
-        return flight_data
+            parameters["max_stopovers"] = 1
+            response = requests.get(
+                url=f"{TEQUILA_ENDPOINT}/v2/search",
+                headers=self.headers,
+                params=parameters,
+            )
+            data = response.json()["data"][0]
+            flight_data = FlightData(
+                price=data["price"],
+                origin_city=data["route"][0]["cityFrom"],
+                origin_airport=data["route"][0]["flyFrom"],
+                destination_city=data["route"][1]["cityTo"],
+                destination_airport=data["route"][1]["flyTo"],
+                out_date=datetime.fromtimestamp(data["route"][0]["dTime"]),
+                return_date=datetime.fromtimestamp(data["route"][2]["dTime"]),
+                stop_overs=1,
+                via_city=data["route"][0]["cityTo"]
+            )
+            return flight_data
+        else:
+            flight_data = FlightData(
+                price=data["price"],
+                origin_city=data["route"][0]["cityFrom"],
+                origin_airport=data["route"][0]["flyFrom"],
+                destination_city=data["route"][0]["cityTo"],
+                destination_airport=data["route"][0]["flyTo"],
+                out_date=datetime.fromtimestamp(data["route"][0]["dTime"]),
+                return_date=datetime.fromtimestamp(data["route"][1]["dTime"])
+            )
+            return flight_data
