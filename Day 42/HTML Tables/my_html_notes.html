@@ -27,7 +27,7 @@
         <p><strong> strong tag means this will be bold.</strong></p>
         <hr size="3" noshade>
         <ul>
-            <li>ul tag represents an unordered list of items, typically rendered as a bulleted list. </li>
+            <li cols="40">ul tag represents an unordered list of items, typically rendered as a bulleted list. </li>
             <li>
                 second item
                 <!-- Look, the closing </li> tag is not placed here! -->
@@ -61,8 +61,51 @@
                 <li>third ordered item</li>
             </ol>
         </ul>
-
-        
+        <!--This is how we add images-->
+        <img src="https://avatars.githubusercontent.com/u/73047020?v=4" alt="p0c4 profile picture" height="250">
+        <!--This is how we add links-->
+        <p><a href="contact_me.html">Contact Me</a></p>
+        <!--This is how we add table-->
+        <table cellspacing="20">
+            <!--This is table's header-->
+            <head>
+                <tr>
+                    <!--th tag means table's header-->
+                    <th align="left">This is colon 1 header</th>
+                    <th align="left">This is colon 2 header</th>
+                    <th align="left">This is colon 3 header</th>
+                </tr>
+            </head>
+            <!--this is table's body-->
+            <body>
+                <!--tr tag means table  row-->
+                <tr>
+                    <!--td tag means table data, all data means a new coloumn-->
+                    <td>CompTIA</td>
+                    <td><a href="https://www.credly.com/badges/02da2803-783b-446f-905d-6aa07093a465/public_url">Security+</a></td>
+                    <td>10-2022</td>
+                </tr>
+                <tr>
+                    <td>Bahcesehir University</td>
+                    <td>Bachelor's Degree in Architecture</td>
+                    <td>2005-2010</td>
+                </tr>
+            </body>
+        </table>
+        <!--we should use form tag in order to create a form-->
+        <form action="">
+            <!--this is lable to inform what input we want-->
+            <label for="">Name</label>
+            <!--there are lots of input types, can check MDN HTML documents abour forms-->
+            <input type="text">
+            <!--this is submit button for the input-->
+            <input type="submit">
+            <label for=""><h3>Some input types</h3></label>
+            <input type="file"><br>
+            <input type="date"><br>
+            <input type="radio"><br>
+            <input type="range"><br>
+        </form>
         <script src="" async defer></script>
     </body>
 </html>
