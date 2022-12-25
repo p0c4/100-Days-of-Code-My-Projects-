@@ -1,0 +1,62 @@
+body {
+    margin: 0;
+    text-align: center;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+h1 {
+    color: #ff889e;
+    font-size: 500%;
+    margin: 0;
+    font-family: 'Great Vibes', cursive;
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*-----------------CLASSES-----------------*/
+.bottom-cloud {
+    position: absolute;
+}
+
+.top-cloud {
+    position: relative;
+    left: 250px;
+}
+.p1{
+    color: #9ea651;
+    margin:0 auto 20px auto;
+    font-family: 'Montserrat', sans-serif;
+}
+.mountain {
+    height: 500px;
+}
+
+.avatar {
+
+    width: 150px;
+    padding-top: 50px;
+}
+
+/*-----------------CONTAINERS-----------------*/
+#top-container {
+    background-color: #E6E7E5;
+    position: relative;
+    padding-top: 100px;
+}
+
+#middle-container {
+    background-color: #A6AA9C;
+    margin: 0;
+    
+}
+#bottom-container {
+    background-color: #F7D3BA;
+    margin: 0;
+
+}
