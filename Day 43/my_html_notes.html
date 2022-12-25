@@ -1,0 +1,111 @@
+<!-- Self-closing tags! This is how I can write a note in an HTML file. Everything in between this two arrow does not effect my code. -->
+
+<!-- in order to make lines, I need to use hr tag. size and noshade are attributes. Only a single space is enough to add an attribute to an hr tag. I don't need a aclosing tah for hr-->
+<hr size="3" noshade>
+
+<!-- in order to add a blank line I need to use br tag. I don't need a aclosing tah for br -->
+<br>
+<h1> This is a level 1 heading created using the h1 tag</h1>
+<h6>This is a level 6 heading. This is the smallest heading that I can use</h6>
+<br>
+<hr size="3" noshade>
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>This is the title of webpage!</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <p> p tag means this will be a pharagraph.</p>
+        <p><em>em tag means this will be italicized.</em></p>
+        <p><strong> strong tag means this will be bold.</strong></p>
+        <hr size="3" noshade>
+        <ul>
+            <li cols="40">ul tag represents an unordered list of items, typically rendered as a bulleted list. </li>
+            <li>
+                second item
+                <!-- Look, the closing </li> tag is not placed here! -->
+                <ul>
+                    <li>second item first subitem</li>
+                    <li>
+                        second item second subitem
+                        <!-- Same for the second nested unordered list! -->
+                        <ul>
+                            <li>second item second subitem first sub-subitem</li>
+                            <li>second item second subitem second sub-subitem</li>
+                            <li>second item second subitem third sub-subitem</li>
+                        </ul>
+                    </li>
+                    <!-- Closing </li> tag for the li that
+                        contains the third unordered list -->
+                    <li>second item third subitem</li>
+                </ul>
+                <!-- Here is the closing </li> tag -->
+            </li>
+            <li>this ol tag for ordered lists</li>
+            <ol>
+                <li>first</li>
+                <li>second ordered item</li>
+                <li>third ordered item</li>
+            </ol>
+            <li>we can choose types for our ordered lists</li>
+            <ol type="i">
+                <li>first</li>
+                <li>second ordered item</li>
+                <li>third ordered item</li>
+            </ol>
+        </ul>
+        <!--This is how we add images-->
+        <img src="https://avatars.githubusercontent.com/u/73047020?v=4" alt="p0c4 profile picture" height="250">
+        <!--This is how we add links-->
+        <p><a href="contact_me.html">Contact Me</a></p>
+        <!--This is how we add table-->
+        <table cellspacing="20">
+            <!--This is table's header-->
+            <head>
+                <tr>
+                    <!--th tag means table's header-->
+                    <th align="left">This is colon 1 header</th>
+                    <th align="left">This is colon 2 header</th>
+                    <th align="left">This is colon 3 header</th>
+                </tr>
+            </head>
+            <!--this is table's body-->
+            <body>
+                <!--tr tag means table  row-->
+                <tr>
+                    <!--td tag means table data, all data means a new coloumn-->
+                    <td>CompTIA</td>
+                    <td><a href="https://www.credly.com/badges/02da2803-783b-446f-905d-6aa07093a465/public_url">Security+</a></td>
+                    <td>10-2022</td>
+                </tr>
+                <tr>
+                    <td>Bahcesehir University</td>
+                    <td>Bachelor's Degree in Architecture</td>
+                    <td>2005-2010</td>
+                </tr>
+            </body>
+        </table>
+        <!--we should use form tag in order to create a form-->
+        <form action="">
+            <!--this is lable to inform what input we want-->
+            <label for="">Name</label>
+            <!--there are lots of input types, can check MDN HTML documents abour forms-->
+            <input type="text">
+            <!--this is submit button for the input-->
+            <input type="submit">
+            <label for=""><h3>Some input types</h3></label>
+            <input type="file"><br>
+            <input type="date"><br>
+            <input type="radio"><br>
+            <input type="range"><br>
+        </form>
+        <script src="" async defer></script>
+    </body>
+</html>
