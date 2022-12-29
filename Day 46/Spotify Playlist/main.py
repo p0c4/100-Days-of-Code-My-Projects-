@@ -1,9 +1,10 @@
 from bs4 import BeautifulSoup
 import lxml
 import requests
+import os
 
-CLIENT_ID = "***REMOVED***"
-CLIENT_SECRET = "***REMOVED***"
+CLIENT_ID = os.environ.get("ENV_SPOTIFY_ID")
+CLIENT_SECRET = os.environ.get("ENV_SPOTIFY_SECRET")
 
 #time = input("Which year you would like to travel to? Type the date in this format YYY-MM-DD")
 time = "2020-06-16"
