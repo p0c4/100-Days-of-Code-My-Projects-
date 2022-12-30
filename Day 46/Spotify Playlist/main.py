@@ -20,7 +20,6 @@ target_list = soup.find_all(name="h3", class_="a-no-trucate", id="title-of-a-sto
 song_list = [target.getText().strip() for target in target_list]
 
 
-
 #-----------Spotipy--------#
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
