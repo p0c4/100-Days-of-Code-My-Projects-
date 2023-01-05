@@ -1,0 +1,163 @@
+body {
+    margin: 0;
+    text-align: center;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-weight: normal;
+}
+
+h1 {
+    color: #DF7861;
+    font-size: 5.625rem;
+    font-family: 'Great Vibes', cursive;
+    margin: 50px auto 0 auto;
+
+}
+
+h2 {
+    color: #9ea651;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px auto 10px auto;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #DF7861;
+}
+
+a {
+    color: #DF7861;
+}
+
+hr {
+    border-color: #C4B6B6;
+    border-style: dotted none none;
+    border-width: 6px;
+    width: 5%;
+    margin: 80px auto 80px auto;
+
+}
+
+p {
+    font-size: 1.5rem;
+    font-weight: normal;
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.7;
+}
+
+/*-----------------CONTAINERS-----------------*/
+#top-container {
+    background-color: #E6E7E5;
+    position: relative;
+    padding-top: 50px;
+}
+
+#middle-container {
+    background-color: #FFF2F2;
+    margin: 0;
+}
+
+#bottom-container {
+    background-color: #F7D3BA;
+    padding-top: 20px;
+    text-align: center;
+}
+
+/*-----------------CLASSES-----------------*/
+
+.profile {
+    width: 50%;
+    margin: auto;
+}
+
+.contact-me {
+    width: 50%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+
+.avatar {
+
+    width: 150px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+.bottom-cloud {
+    position: absolute;
+}
+
+.mountain {
+    width: 50%;
+    min-width: 400px;
+}
+
+.skill-row {
+    width: 50%;
+    margin: auto;
+    text-align: left;
+    line-height: 1.7;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.skill-img {
+    width: 25%;
+    float: left;
+    margin-right: 30px;
+    min-height: 200px;
+    min-width: 200px;
+}
+
+.courses-img {
+    width: 25%;
+    float: right;
+    margin-left: 30px;
+    min-height: 200px;
+    min-width: 200px;
+}
+
+.top-cloud {
+    position: absolute;
+    right: 500px;
+    top: 100px;
+}
+
+.btn {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0px;
+    font-family: Courier New;
+    color: #ffffff;
+    font-size: 20px;
+    background: #DF7861;
+    padding: 10px 20px 10px 20px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: #99a699;
+    text-decoration: none;
+}
+
+.footer-link {
+    margin: auto 20px auto 10px;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: #FFF2F2;
+}
+
+.intro {
+    width: 100%;
+    margin: auto;
+}
+
+.copyright {
+    color: #FFF2F2;
+    font-size: 1.5rem;
+    margin-top: 0px;
+    padding: 0px 0px 10px;
+}
