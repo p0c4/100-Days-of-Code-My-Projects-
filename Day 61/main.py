@@ -9,8 +9,10 @@ class LoginForm(FlaskForm):
     password = PasswordField(label='Password', validators=[DataRequired()])
     submit = SubmitField(label='Log In')
 
+
 app = Flask(__name__)
 Bootstrap(app)
+
 
 csrf = csrf.CSRFProtect(app)
 app.secret_key = "123456789"
