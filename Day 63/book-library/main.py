@@ -13,7 +13,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///new-books-collection.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
-
 with app.app_context():
     class Book(db.Model):
         id = db.Column(db.Integer, primary_key=True)
@@ -29,11 +28,7 @@ with app.app_context():
     # new_book = Book(id=1, title="Harry Potter", author="J. K. Rowling", rating=9.3)
     # db.session.add(new_book)
     # db.session.commit()
-
     all_books = db.session.query(Book).all()
-
-
-
 
 class LibraryForm(FlaskForm):
     book_name = StringField('Book Name', validators=[DataRequired()])
@@ -47,7 +42,6 @@ class LibraryForm(FlaskForm):
 def home():
     return render_template("index.html", library=all_books)
 
-
 @app.route("/add", methods=["GET","POST"])
 def add():
     form = LibraryForm()    
@@ -58,7 +52,6 @@ def add():
             db.session.commit()
         return redirect(url_for('home'))
     return render_template("add.html", form=form)
-
 
 @app.route("/edit", methods=["GET","POST"])
 def edit():
