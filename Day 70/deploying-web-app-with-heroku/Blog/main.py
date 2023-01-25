@@ -25,12 +25,6 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 
 
-@login_manager.user_loader
-def load_user(user_id):
-    with app.app_context():
-        return User.query.get(int(user_id))
-
-
 ##CONFIGURE TABLES
 class User(UserMixin, db.Model):
     with app.app_context():
@@ -69,6 +63,10 @@ class Comment(db.Model):
         text = db.Column(db.Text, nullable=False)
         # db.create_all()
 
+@login_manager.user_loader
+def load_user(user_id):
+    with app.app_context():
+        return User.query.get(int(user_id))
 
 #Create admin-only decorator
 def admin_only(f):
